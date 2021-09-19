@@ -17,32 +17,23 @@ body {
    box-shadow: 0 0 0 0rem rgb(13 110 253 / 25%) !important;
 }
 
-
 #mainSection {
    display: flex;
    align-items: center;
    height: 100vh;
 }
-
 #mainDiv {
    background: #f8f3ed;
-   /* height: 85vh;
-   width: 80vw;
-   margin: auto; */
    width: 100%;
    height: 100%;
-   /* border-radius: 20px; */
    padding: 15px;
    overflow: hidden;
 }
 
+/* header area start here */
 .header {
    display: flex;
    padding: 15px;
-}
-
-.header .logo img {
-   /* width: 80px; */
 }
 .header .part2 {
    margin-left: auto;
@@ -57,7 +48,6 @@ body {
 .header .part2 a img {
    width: 24px;
 }
-
 .header .part2 a {
    margin: 0 10px;
 }
@@ -65,20 +55,19 @@ body {
    margin-right: 0;
 }
 
-
-.header-part h1 {
+/* section header part */
+.header-text h1 {
    font-family: 'Libre Baskerville', serif;
    color: #2b1811;
    font-size: 48px;
    font-weight: 600;
    margin-bottom: 15px;
 }
-.header-part p {
+.header-text p {
    color: #2b1811;
    margin-bottom: 15px;
 }
-
-.header-part .input-group {
+.header-text .input-group {
    max-width: 500px;
    margin: auto;
    margin-top: 30px;
@@ -87,12 +76,12 @@ body {
    background: #fff;
    overflow: hidden;
 }
-.header-part .input-group .form-control {
+.header-text .input-group .form-control {
    height: 60px;
    border: none;
    background: #fff;
 }
-.header-part .input-group .btn {
+.header-text .input-group .btn {
    background: none;
    border: none;
    padding: 0;
@@ -100,16 +89,19 @@ body {
    padding-top: 5px;
    padding-right: 5px;
 }
-.header-part .input-group .btn .fas {
+.header-text .input-group .btn .fas {
    color: #968c8a;
    font-size: 20px;
 }
 
-
-
+/* book container start here */
 #bookContainer {
    overflow-y: auto;
-   height: 500px;
+   height: 600px;
+}
+#bookContainer::-webkit-scrollbar {
+   width: 0px;
+   height: 10px;
 }
 .book-box {
    display: flex;
@@ -125,7 +117,6 @@ body {
    box-shadow: 10px 10px 50px -35px;
    border: 2px solid #fff;
 }
-
 .book-box .book-info .title {
    font-family: 'Libre Baskerville', serif;
 }
@@ -133,56 +124,35 @@ body {
    font-size: 14px;
 }
 
-
-#emptyField,
+/* not found area start here */
 #notFound {
    text-align: center;
    width: 300px;
    margin: auto;
    display: none;
 }
-#emptyField,
 #notFound h5 {   
    font-family: 'Libre Baskerville', serif;
    font-weight: 600;
 }
 
-
-
-#bookContainer::-webkit-scrollbar {
-   width: 0px;
-   height: 10px;
-}
-
-#bookContainer::-webkit-scrollbar-thumb {
-   background: #e5e5e5;
-   border-radius: 5px;
-}
-#bookContainer::-webkit-scrollbar-track {
-   background: #fff;
-   border-radius: 3px;
-}
-
-
+/* loader */
 #loader {
    display: none;
 }
 
-
-
-
+/* responsive media queries */
 @media (max-width: 576px) {
    #mainDiv {
       padding: 0;
    }
    .header {
-      /* padding: 0; */
       margin-bottom: 30px;
    }
-   .header-part h1 {
+   .header-text h1 {
       font-size: 32px;
    }
-   .header-part p {
+   .header-text p {
       margin-bottom: 0;
    }
 }

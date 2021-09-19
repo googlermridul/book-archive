@@ -1,3 +1,4 @@
+// load api data
 const getBook = () => {
    const inputField = document.getElementById("inputField")
    const inputValue = inputField.value;
@@ -8,11 +9,11 @@ const getBook = () => {
       displayBooks(data)
    })
    .catch(() => {
-      document.getElementById("notFound").style.display = "block";
+      document.getElementById("notFound").style.display = "block"; // api error handling
    })
 }
 
-
+// display api data on html
 const displayBooks = (data) => {
    const bookContainer = document.getElementById("bookContainer");
    const foundedData = document.getElementById("foundedData")
@@ -35,13 +36,14 @@ const displayBooks = (data) => {
             </div>
          </div>
       `;
-      foundedData.innerHTML = `${books.length} results shown from ${data.length}`
+      // founded book quantity
+      foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
       bookContainer.appendChild(div)
    });
    document.getElementById("notFound").style.display = "none";
 }
 
-
+// working search button on enter click
 document.getElementById("inputField").addEventListener("keypress", function(event) {
    if (event.key === "Enter") {
       document.getElementById("searchBtn").click();
