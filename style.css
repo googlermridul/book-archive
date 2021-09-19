@@ -136,6 +136,7 @@ body {
 #notFound {
    width: 300px;
    margin: auto;
+   display: none;
 }
 
 
