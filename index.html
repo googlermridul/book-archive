@@ -60,19 +60,26 @@
                            <button onclick="getBook()" class="btn" type="button" id="searchBtn">
                               <img src="img/search.png" alt="">
                            </button>
-                           <input id="inputField" type="text" class="form-control" value="react"
+                           <input id="inputField" type="text" class="form-control" value="fish"
                               placeholder="Titles, author, or topics.">
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="row" id="bookContainer">
+               <div class="row">
+                  <p id="foundedData"></p>
                   <div id="loader" class="text-center">
                      <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                      </div>
                   </div>
-                  <img id="notFound" class="img-fluid" src="img/undraw_marilyn_v73y.svg" alt="">
+                  <div id="notFound">
+                     <img class="img-fluid mb-5" src="img/undraw_marilyn_v73y.svg" alt="">
+                     <h5>Something went wrong :(</h5>
+                  </div>
+               </div>
+               <div id="bookContainer" class="row">
+
                </div>
             </div>
          </section>

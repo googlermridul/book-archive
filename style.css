@@ -26,10 +26,12 @@ body {
 
 #mainDiv {
    background: #f8f3ed;
-   height: 85vh;
+   /* height: 85vh;
    width: 80vw;
-   margin: auto;
-   border-radius: 20px;
+   margin: auto; */
+   width: 100%;
+   height: 100%;
+   /* border-radius: 20px; */
    padding: 15px;
    overflow: hidden;
 }
@@ -59,12 +61,11 @@ body {
 .header .part2 a {
    margin: 0 10px;
 }
-
-
-
-.header-part {
-   /* margin-top: 15px; */
+.header .part2 a:last-child {
+   margin-right: 0;
 }
+
+
 .header-part h1 {
    font-family: 'Libre Baskerville', serif;
    color: #2b1811;
@@ -133,10 +134,17 @@ body {
 }
 
 
+#emptyField,
 #notFound {
+   text-align: center;
    width: 300px;
    margin: auto;
    display: none;
+}
+#emptyField,
+#notFound h5 {   
+   font-family: 'Libre Baskerville', serif;
+   font-weight: 600;
 }
 
 
@@ -158,4 +166,23 @@ body {
 
 #loader {
    display: none;
+}
+
+
+
+
+@media (max-width: 576px) {
+   #mainDiv {
+      padding: 0;
+   }
+   .header {
+      /* padding: 0; */
+      margin-bottom: 30px;
+   }
+   .header-part h1 {
+      font-size: 32px;
+   }
+   .header-part p {
+      margin-bottom: 0;
+   }
 }

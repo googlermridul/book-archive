@@ -2,10 +2,14 @@ const getBook = () => {
    const inputField = document.getElementById("inputField")
    const inputValue = inputField.value;
 
-   fetch(`https://openlibrary.org/search.json?q=${inputValue}`)
+   if (inputValue === '') {
+      document.getElementById("emptyField").style.display = "block";
+   }
+
+   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
    .then(res => res.json())
    .then(data => {
-      displayBooks(data)
+      displayBooks(data.meals)
    })
    .catch(() => {
       document.getElementById("notFound").style.display = "block";
@@ -15,29 +19,30 @@ const getBook = () => {
 
 const displayBooks = (data) => {
    const bookContainer = document.getElementById("bookContainer");
-   const foundedData = document.getElementById("foundedData")
    bookContainer.innerHTML = '';
-   const books = data.docs;
+
+   const foundedData = document.getElementById("foundedData")
+
+   const books = data;
    
    books.forEach(book => {
-      const {title, author_name, first_publish_year, cover_i, publisher} = book;
+      const {idMeal, strMeal, strMealThumb, strInstructions} = book;
 
       const div = document.createElement("div");
       div.classList = "col-sm-6 col-lg-4"
       div.innerHTML = `
          <div id="bookBox" class="book-box">
-            <img class="book-img" src="${`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`}" alt="">
-            <div class="book-info">
-               <h5 class="title">${title.slice(0, 5)}</h5>
-               <p>By: ${author_name}</p>
-               <p>Publish year: ${first_publish_year}</p>
-               <p class="mb-0">Publisher: ${publisher}</p>
+            <img class="img-fluid book-img" src="${strMealThumb}" alt="">
+            <div className="book-info">
+               <h5>${strMeal}</h5>
+               <p class="mb-0 mt-3">${strInstructions.slice(0, 100)}</p>
             </div>
          </div>
       `;
-      foundedData.innerHTML = `${books.length} results shown from ${data.length}`
+      foundedData.innerHTML = `${books.length} results shown from`
       bookContainer.appendChild(div)
    });
+   document.getElementById("emptyField").style.display = "none";
    document.getElementById("notFound").style.display = "none";
 }
 
