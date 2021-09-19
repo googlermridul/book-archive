@@ -8,8 +8,9 @@ const getBook = () => {
    .then(data => {
       displayBooks(data)
    })
-   .catch(() => {
+   .catch((err) => {
       document.getElementById("notFound").style.display = "block"; // api error handling
+      console.log(err);
    })
 }
 
