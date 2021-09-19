@@ -60,13 +60,18 @@
                            <button onclick="getBook()" class="btn" type="button" id="searchBtn">
                               <img src="/img/search.png" alt="">
                            </button>
-                           <input id="inputField" type="text" class="form-control" value=""
+                           <input id="inputField" type="text" class="form-control" value="react"
                               placeholder="Titles, author, or topics.">
                         </div>
                      </div>
                   </div>
                </div>
                <div class="row" id="bookContainer">
+                  <div id="loader" class="text-center">
+                     <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                     </div>
+                  </div>
                   <img id="notFound" class="img-fluid" src="img/undraw_marilyn_v73y.svg" alt="">
                </div>
             </div>

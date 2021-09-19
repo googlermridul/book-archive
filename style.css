@@ -26,11 +26,12 @@ body {
 
 #mainDiv {
    background: #f8f3ed;
-    height: 80vh;
-    width: 80vw;
-    margin: auto;
-    border-radius: 20px;
-    padding: 15px;
+   height: 85vh;
+   width: 80vw;
+   margin: auto;
+   border-radius: 20px;
+   padding: 15px;
+   overflow: hidden;
 }
 
 .header {
@@ -62,7 +63,7 @@ body {
 
 
 .header-part {
-   margin-top: 15px;
+   /* margin-top: 15px; */
 }
 .header-part h1 {
    font-family: 'Libre Baskerville', serif;
@@ -104,13 +105,56 @@ body {
 }
 
 
+
+#bookContainer {
+   overflow-y: auto;
+   height: 500px;
+}
+.book-box {
+   display: flex;
+   align-items: flex-end;
+   margin-bottom: 30px;
+}
 .book-box .book-img {
-   width: 180px;
-   height: 220px;
+   min-width: 160px;
+   min-height: 200px;
+   max-width: 160px;
+   max-height: 200px;
+   margin-right: 15px;
+   box-shadow: 10px 10px 50px -35px;
+   border: 2px solid #fff;
+}
+
+.book-box .book-info .title {
+   font-family: 'Libre Baskerville', serif;
+}
+.book-box .book-info p {
+   font-size: 14px;
 }
 
 
 #notFound {
    width: 300px;
    margin: auto;
+}
+
+
+
+#bookContainer::-webkit-scrollbar {
+   width: 0px;
+   height: 10px;
+}
+
+#bookContainer::-webkit-scrollbar-thumb {
+   background: #e5e5e5;
+   border-radius: 5px;
+}
+#bookContainer::-webkit-scrollbar-track {
+   background: #fff;
+   border-radius: 3px;
+}
+
+
+#loader {
+   display: none;
 }
