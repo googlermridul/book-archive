@@ -38,7 +38,12 @@ const displayBooks = (data) => {
          </div>
       `;
       // founded book quantity
-      foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
+      if (books.length === 0) {
+         foundedData.innerHTML = `No results found!`;
+      }
+      else {
+         foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
+      }
       bookContainer.appendChild(div)
    });
    document.getElementById("notFound").style.display = "none";
