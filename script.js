@@ -20,6 +20,8 @@ const displayBooks = (data) => {
    const foundedData = document.getElementById("foundedData")
    bookContainer.innerHTML = '';
    const books = data.docs;
+
+   console.log(books.length);
    
    books.forEach(book => {
       const {title, author_name, first_publish_year, cover_i, publisher} = book;
@@ -30,26 +32,27 @@ const displayBooks = (data) => {
          <div id="bookBox" class="book-box">
             <img class="book-img" src="${`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`}" alt="">
             <div class="book-info">
-               <h5 class="title">${title.slice(0, 5)}</h5>
+               <h5 class="title">${title.slice(0, 10)}</h5>
                <p>By: ${author_name}</p>
                <p>Publish year: ${first_publish_year}</p>
                <p class="mb-0">Publisher: ${publisher}</p>
             </div>
          </div>
       `;
-      // founded book quantity
-      if (books.length === 0) {
-         foundedData.innerHTML = `No results found!`;
-      }
-      else {
-         foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
-      }
       bookContainer.appendChild(div)
    });
-   document.getElementById("notFound").style.display = "none";
+   // founded book quantity shown here
+   if (books.length === 0) {
+      foundedData.innerHTML = `No results found!`;
+      document.getElementById("notFound").style.display = "block";
+   }
+   else {
+      foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
+      document.getElementById("notFound").style.display = "none";
+   }
 }
 
-// working search button on enter click
+// make working search button on enter click
 document.getElementById("inputField").addEventListener("keypress", function(event) {
    if (event.key === "Enter") {
       document.getElementById("searchBtn").click();
