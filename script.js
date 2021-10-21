@@ -17,7 +17,6 @@ const getBook = () => {
    .then(res => res.json())
    .then(data => {
       displayBooks(data)
-      console.log(data);
    })
    .catch((err) => {
       document.getElementById("notFound").style.display = "block"; // api error handling
@@ -46,7 +45,7 @@ const displayBooks = (data) => {
                <h5 class="title">${title.slice(0, 10)}</h5>
                <p>By: ${author_name}</p>
                <p>Publish year: ${first_publish_year}</p>
-               <p class="mb-0">Publisher: ${publisher.slice(0, 3)}</p>
+               <p class="mb-0">Publisher: ${publisher}</p>
             </div>
          </div>
       `;
