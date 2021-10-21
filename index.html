@@ -52,8 +52,8 @@
                <div class="row">
                   <div class="col">
                      <div class="header-text text-center">
-                        <h1>New & Trending</h1>
-                        <p>Explorer new worlds from authors</p>
+                        <h1>One More Chapter</h1>
+                        <p>Today a reader Tomorrow a leader.</p>
                         <div class="input-group">
                            <button onclick="getBook()" class="btn" type="button" id="searchBtn">
                               <img src="img/search.png" alt="">
@@ -64,19 +64,19 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
-                  <p id="foundedData"></p>
-                  <div id="loader" class="text-center">
-                     <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
+               <div id="loader" class="text-center">
+                  <div class="spinner-border" role="status"></div>
+               </div>
+               <div id="showBooks">
+                  <div class="row">
+                     <p id="foundedData"></p>
+                     <div id="notFound">
+                        <img class="img-fluid mb-5" src="img/undraw_marilyn_v73y.svg" alt="">
+                        <h5>No results found :(</h5>
                      </div>
                   </div>
-                  <div id="notFound">
-                     <img class="img-fluid mb-5" src="img/undraw_marilyn_v73y.svg" alt="">
-                     <h5>No results found :(</h5>
-                  </div>
+                  <div id="bookContainer" class="row"></div>
                </div>
-               <div id="bookContainer" class="row"></div>
             </div>
          </section>
 
@@ -89,7 +89,3 @@
 </body>
 
 </html>
-
-
-<!-- code link: https://github.com/Programming-Hero-Web-Course4/book-archive-googlermridul
-live link: https://book-archiveee.netlify.app/ -->

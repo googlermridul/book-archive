@@ -8,7 +8,7 @@ body {
    font-family: 'Libre Baskerville', serif;
    font-family: 'Montserrat', sans-serif;
    font-weight: 500;
-   background: #f1e5cf;
+   background: #f8f3ed;
 }
 
 .btn:focus,
@@ -27,7 +27,7 @@ body {
    width: 100%;
    height: 100%;
    padding: 15px;
-   overflow: hidden;
+   /* overflow: hidden; */
 }
 
 /* header area start here */
@@ -96,8 +96,8 @@ body {
 
 /* book container start here */
 #bookContainer {
-   overflow-y: auto;
-   height: 600px;
+   /* overflow-y: auto;
+   height: 600px; */
 }
 #bookContainer::-webkit-scrollbar {
    width: 0px;
@@ -114,7 +114,7 @@ body {
    max-width: 160px;
    max-height: 200px;
    margin-right: 15px;
-   box-shadow: 10px 10px 50px -35px;
+   /* box-shadow: 10px 10px 50px -35px; */
    border: 2px solid #fff;
 }
 .book-box .book-info .title {
@@ -139,6 +139,7 @@ body {
 /* loader */
 #loader {
    display: none;
+   margin-top: 35px;
 }
 
 /* responsive media queries */

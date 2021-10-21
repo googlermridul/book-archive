@@ -1,7 +1,17 @@
+const toggleSpinner = style => {
+   document.getElementById("loader").style.display = style;
+}
+const toggleSearchResult = style => {
+   document.getElementById("showBooks").style.display = style;
+}
+
 // load api data
 const getBook = () => {
    const inputField = document.getElementById("inputField")
    const inputValue = inputField.value;
+
+   toggleSpinner("block")
+   toggleSearchResult("none")
 
    fetch(`https://openlibrary.org/search.json?q=${inputValue}`)
    .then(res => res.json())
@@ -21,7 +31,7 @@ const displayBooks = (data) => {
    bookContainer.innerHTML = '';
    const books = data.docs;
 
-   console.log(books.length);
+   // console.log(books.length);
    
    books.forEach(book => {
       const {title, author_name, first_publish_year, cover_i, publisher} = book;
@@ -30,7 +40,7 @@ const displayBooks = (data) => {
       div.classList = "col-sm-6 col-lg-4"
       div.innerHTML = `
          <div id="bookBox" class="book-box">
-            <img class="book-img" src="${`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`}" alt="">
+            <img class="shadow book-img" src="${`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`}" alt="">
             <div class="book-info">
                <h5 class="title">${title.slice(0, 10)}</h5>
                <p>By: ${author_name}</p>
@@ -50,6 +60,9 @@ const displayBooks = (data) => {
       foundedData.innerHTML = `${books.length} results shown from ${data.numFound}`
       document.getElementById("notFound").style.display = "none";
    }
+
+   toggleSpinner("none")
+   toggleSearchResult("block")
 }
 
 // make working search button on enter click
