@@ -22,6 +22,7 @@ body {
    align-items: center;
    height: 100vh;
 }
+
 #mainDiv {
    background: #f8f3ed;
    width: 100%;
@@ -35,22 +36,27 @@ body {
    display: flex;
    padding: 15px;
 }
+
 .header .part2 {
    margin-left: auto;
    display: flex;
    align-items: center;
 }
+
 .header .part2 .profile {
    width: 48px;
    height: 48px;
    border-radius: 100px;
 }
+
 .header .part2 a img {
    width: 24px;
 }
+
 .header .part2 a {
    margin: 0 10px;
 }
+
 .header .part2 a:last-child {
    margin-right: 0;
 }
@@ -59,14 +65,16 @@ body {
 .header-text h1 {
    font-family: 'Libre Baskerville', serif;
    color: #2b1811;
-   font-size: 48px;
+   font-size: 46px;
    font-weight: 600;
    margin-bottom: 15px;
 }
+
 .header-text p {
    color: #2b1811;
    margin-bottom: 15px;
 }
+
 .header-text .input-group {
    max-width: 500px;
    margin: auto;
@@ -76,11 +84,13 @@ body {
    background: #fff;
    overflow: hidden;
 }
+
 .header-text .input-group .form-control {
    height: 60px;
    border: none;
    background: #fff;
 }
+
 .header-text .input-group .btn {
    background: none;
    border: none;
@@ -89,6 +99,7 @@ body {
    padding-top: 5px;
    padding-right: 5px;
 }
+
 .header-text .input-group .btn .fas {
    color: #968c8a;
    font-size: 20px;
@@ -99,15 +110,18 @@ body {
    /* overflow-y: auto;
    height: 600px; */
 }
+
 #bookContainer::-webkit-scrollbar {
    width: 0px;
    height: 10px;
 }
+
 .book-box {
    display: flex;
    align-items: flex-end;
    margin-bottom: 30px;
 }
+
 .book-box .book-img {
    min-width: 160px;
    min-height: 200px;
@@ -117,9 +131,11 @@ body {
    /* box-shadow: 10px 10px 50px -35px; */
    border: 2px solid #fff;
 }
+
 .book-box .book-info .title {
    font-family: 'Libre Baskerville', serif;
 }
+
 .book-box .book-info p {
    font-size: 14px;
 }
@@ -131,7 +147,8 @@ body {
    margin: auto;
    display: none;
 }
-#notFound h5 {   
+
+#notFound h5 {
    font-family: 'Libre Baskerville', serif;
    font-weight: 600;
 }
@@ -147,12 +164,15 @@ body {
    #mainDiv {
       padding: 0;
    }
+
    .header {
       margin-bottom: 30px;
    }
+
    .header-text h1 {
       font-size: 32px;
    }
+
    .header-text p {
       margin-bottom: 0;
    }
